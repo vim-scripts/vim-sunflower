@@ -1,0 +1,118 @@
+sunflower.txt         For Vim version 7+         Last change: 2013-11-07
+
+Author: Göktuğ Kayaalp <self@gkayaalp.com>
+License: see |sunflower-license|
+>
+
+       _/_/_/  _/    _/  _/      _/  _/_/_/_/  _/          _/_/    _/          _/  _/_/_/_/  _/_/_/
+    _/        _/    _/  _/_/    _/  _/        _/        _/    _/  _/          _/  _/        _/    _/
+     _/_/    _/    _/  _/  _/  _/  _/_/_/    _/        _/    _/  _/    _/    _/  _/_/_/    _/_/_/
+        _/  _/    _/  _/    _/_/  _/        _/        _/    _/    _/  _/  _/    _/        _/    _/
+ _/_/_/      _/_/    _/      _/  _/        _/_/_/_/    _/_/        _/  _/      _/_/_/_/  _/    _/
+<
+
+Depends on 'python'
+
+SYNOPSIS                                                            *sunflower*
+
+Sunflower is a plugin for adjusting Vim's |colorscheme| depending on the
+time of day. It sets the day colorscheme for the daytime and the night
+colorscheme for the night time.
+
+INSTALLATION                                                *sunflower-install*
+
+If you haven't installed the plugin files yet, please see the README for
+instructions on the subject.
+
+You will need python scripting support and the PyEphem library in order
+to use this plugin. Also, auto-commands should be available. See the
+README file that comes with the plugin package for instructions on how
+to get these done.
+
+By default, |sunflower| will install an autocommand to change the theme when
+needed.  See |g:sunflower_install_autocommand| to learn how to modify this
+behaviour.
+
+Also, by default, |sunflower| will set the 'background' option to dark and
+light depending on time, to enable or disable this behaviour, use the
+|g:sunflower_set_background| variable.
+
+CONFIGURATION                                                *sunflower-config*
+
+There are 4 'variables' that one can use to configure how |sunflower| behaves,
+and two of these are mandatory. The below descriptions of these variables
+will use the latitude and longtitude for Istanbul.  Easiest way to find out
+the longtitude of a city is to look it up in Wikipedia.
+
+                                                              *g:sunflower_lat*
+
+This variable should be set to the latitude of the current city, e.g. >
+
+    let g:sunflower_lat=41
+<
+and is a mandatory variable, which means, if not set, |sunflower| will not
+work.
+
+                                                             *g:sunflower_long*
+
+This variable should be set to the longtitude of the current city, e.g. >
+
+    let g:sunflower_long=28
+<
+and is a mandatory variable, which means, if not set, |sunflower| will not
+work.
+
+                                                  *g:sunflower_colorscheme_day*
+
+The name of the colorscheme to use for day.  Defaults to "default".
+
+                                                *g:sunflower_colorscheme_night*
+
+The name of the colorscheme to use for night.  Defaults to "default".
+
+                                                          *SunflowerFindTheSun*
+
+This function decides which colorscheme to use depending on the time of day.
+It also sets the 'background' option aptly.
+
+                                                   *g:sunflower_set_background*
+
+This variable determines whether |sunflower| sets the 'background' option
+depending on the time of day.  Defaults to 1 (enabled).  Set to 0 to disable.
+
+                                              *g:sunflower_install_autocommand*
+
+This variable determines whether sunflower installs an autocommand to
+poll for channces to adjust the colorscheme. Defaults to 1 (enabled).
+Set to 0 to disable.
+
+LICENSE                                                     *sunflower-license*
+
+Copyright (c) 2013 Göktuğ Kayaalp <self@gkayaalp.com>
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+  Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+
+  Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ vim:ft=help:tw=78:nowrap:

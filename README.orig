@@ -1,0 +1,82 @@
+                                 vim-sunflower
+                                 =============
+
+      _/_/_/  _/    _/  _/      _/  _/_/_/_/  _/          _/_/    _/          _/  _/_/_/_/  _/_/_/
+   _/        _/    _/  _/_/    _/  _/        _/        _/    _/  _/          _/  _/        _/    _/
+    _/_/    _/    _/  _/  _/  _/  _/_/_/    _/        _/    _/  _/    _/    _/  _/_/_/    _/_/_/
+       _/  _/    _/  _/    _/_/  _/        _/        _/    _/    _/  _/  _/    _/        _/    _/
+_/_/_/      _/_/    _/      _/  _/        _/_/_/_/    _/_/        _/  _/      _/_/_/_/  _/    _/
+
+                                    Synopsis
+                                    ````````
+
+This is a vim plugin for adjusting colors depending on the time of the
+day. Inspired by the similar plugin for emacs called 'theme-changer'.
+
+                                  Why do this?
+                                  ````````````
+
+Apart from comprising ones favourite colours in a favourable
+combination, colour themes are what their eyes be subject to throughout
+the day and night. While these colours remain unchanged all the day,
+however, ones surroundings do not: sun sets and rises, turning day into
+night and night into day; and lights get turned on and off. The amount
+and quality of light around one determines the intensity of colours
+their eyes can tolerate. While brighter, lighter colours are easier ones
+eyes during daylight, they start to gnaw them in the night. Dark colors
+are suitable for use in the dark or under artificial illumination, but
+are tiring during the day.
+
+While it is very useful to switch colour themes based on the amount and
+quality of illumination, most people either cannot be bothered to do so,
+or forget to do it altogether. This vim plugin is my go at automating
+this task, so that it is done for the vim user without they interfering,
+and it is done at the first place.
+
+
+                                  Installation
+                                  ````````````
+
+Sunflower depends of PyEphem for sunset and sunrise computations. You
+can use the `requirements.txt' file at the project root with `pip'
+utility to install anything sunflower depends:
+
+    % pip install -r requirements.txt
+
+or you can install the library yourself:
+
+    % pip install pyephem
+
+Please note that you may need to run these commands with superuser
+privileges.
+
+This plugin depends on python scripting feature of Vim. If your build
+of vim does not support python scripting, you will need to build vim
+from source and enable python support. You will need to have Python
+development libraries and headers installed before doing so.
+
+Also, autocommands should be available. You can see elaborate details on
+what features are available or not via the `:version' command in vim.
+
+                                 Configuration
+                                 `````````````
+
+There are some variables you can use to configure the behaviour of
+sunflower. Below is an example configuration, set up for Istanbul. You
+will need to find longtitude and latitude values for your city. More
+elaborate details on these variables and configuring sunflower can be
+found via `:help sunflower-config'.
+
+    let g:sunflower_lat=41
+    let g:sunflower_long=28
+    let g:sunflower_colorscheme_day='solarized'
+    let g:sunflower_colorscheme_night='solarized'
+
+                                    License
+                                    ```````
+
+This programme is released under the Two Clause BSD License. The text of
+license is available in the LICENSE file, which should be available in
+the root folder of this package.
+
+ :vim:nowrap:
